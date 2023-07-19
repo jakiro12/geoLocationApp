@@ -31,8 +31,8 @@ export default function GetRealLocation (){
    initialRegion={{
      latitude:userLocation.coords.latitude,
      longitude: userLocation.coords.longitude,
-     latitudeDelta: 0.0922,
-     longitudeDelta: 0.0421,
+     latitudeDelta: 0.01,
+     longitudeDelta: 0.01,
    }}
    onUserLocationChange={(e)=>{
     setUserLocation(

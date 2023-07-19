@@ -16,21 +16,19 @@ export default function SelectTheScreen (){
                             Vehiculo
                         </Text>
                     </View>
-                    <View style={styles.boxIconOption}>
-                        <Text>
-                            Mapas con los recorridos
-                        </Text>
-                    </View>
+                    <TouchableOpacity style={styles.boxIconOption} onPress={()=> navigation.navigate('recorridos')}>
+                    <Text>
+                        Recorridos
+                    </Text> 
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.boxGrid}>
-                <View style={styles.boxIconOption}>
-                    <TouchableOpacity onPress={()=> navigation.navigate('ubicacion')}>
+                
+                    <TouchableOpacity style={styles.boxIconOption} onPress={()=> navigation.navigate('ubicacion')}>
                     <Text>
                   Ubicacion en vivo
                     </Text> 
                     </TouchableOpacity>
-                  
-                </View>
                     <View style={styles.boxIconOption}>
                         <Text>Ubicaciones mas frecuentes</Text>
                     </View>

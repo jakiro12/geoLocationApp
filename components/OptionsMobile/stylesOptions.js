@@ -1,0 +1,40 @@
+import { StyleSheet } from "react-native";
+
+export default stylesGridOptions=StyleSheet.create({
+    container:{
+        width:'100%',
+        height:'100%',
+        backgroundColor:'#f4f4f4',
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'space-around'
+    },
+    headerContainer:{
+        width:'90%',
+        height:'25%',
+        borderWidth:2,
+        borderColor:'#000000'
+    },
+    bodyContainer:{
+        width:'90%',
+        height:'60%',
+        display:'flex'
+    },
+    boxGrid:{
+        width:'100%',
+        height:'50%',
+        borderColor:'#000000',
+        borderWidth:2,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-around',
+        alignItems:'center'
+    },
+    boxIconOption:{
+        width:'45%',
+        height:'80%',
+        borderColor:'#000000',
+        borderWidth:2,
+    }
+})

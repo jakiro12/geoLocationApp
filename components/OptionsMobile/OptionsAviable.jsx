@@ -6,6 +6,10 @@ export default function SelectTheScreen (){
     const navigation=useNavigation()
     return(
         <View style={styles.container}>
+            <View style={styles.navbarContainer}>
+                <View style={styles.btnTypeUser}><Text style={styles.textBtnUserOption}>Pasajero</Text></View>
+                <View style={styles.btnTypeUser}><Text style={styles.textBtnUserOption}>Transporte</Text></View>
+            </View>
             <View style={styles.headerContainer}>
                 <Text>Cabecera</Text>
             </View>

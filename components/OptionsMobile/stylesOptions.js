@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-
+// los ootros colores son: 0a32eb ff8300
 export default stylesGridOptions=StyleSheet.create({
     container:{
         width:'100%',
@@ -8,7 +8,7 @@ export default stylesGridOptions=StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'space-around'
+        justifyContent:'space-between'
     },
     headerContainer:{
         width:'90%',
@@ -36,5 +36,30 @@ export default stylesGridOptions=StyleSheet.create({
         height:'80%',
         borderColor:'#000000',
         borderWidth:2,
+    },
+    navbarContainer:{
+        width:'100%',
+        height:'8%',
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'row',
+        backgroundColor:'#03AEE7'
+    },
+    btnTypeUser:{
+        width:140,
+        height:'75%',
+        borderColor:'#000000',
+        borderWidth:1,
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:20,
+        backgroundColor:'#ffB400',
+    },
+    textBtnUserOption:{
+        fontSize:20,
+        fontWeight:'400'
     }
+
 })

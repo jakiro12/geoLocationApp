@@ -14,41 +14,36 @@ export default function BusLine1 (){
    }}
    >
    <Marker
-    pinColor='#00ff00' 
+    pinColor='#00ff00'  
      coordinate={{
-       latitude: 9.170853,
-       longitude:-83.331446,
+       latitude: 9.172054, 
+       longitude:-83.333672,
      }}
    />
-    <Marker
-    pinColor='#00ff00' 
-     coordinate={{
-       latitude: 9.172212,
-       longitude:-83.334995,
-     }}
-   />
+
    <Marker
     pinColor='#00ff00'
-     coordinate={{
-       latitude: 9.171377,
-       longitude:-83.335979,  //9.172212, -83.334995
+     coordinate={{   
+       latitude: 9.171355,
+       longitude:-83.335539,  
      }}
    />
     <Polyline
     strokeWidth={4}
     strokeColor="green"
     coordinates={
-        [{
-            latitude: 9.170853,
-            longitude:-83.331446,
-          },{
-            latitude: 9.172212,
-            longitude:-83.334995,
-          },
-          {
-            latitude: 9.171377,
-            longitude:-83.335979,
-          }
+        [{   
+          latitude: 9.171355,
+          longitude:-83.335539,  
+        },
+        {
+          latitude: 9.172266,  //9.172266, -83.335421
+          longitude:-83.335421,
+        },
+        {
+          latitude: 9.172054, 
+          longitude:-83.333672,
+        }  
 
         ]
     }/>

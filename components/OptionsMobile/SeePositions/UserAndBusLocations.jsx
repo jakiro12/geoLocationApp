@@ -21,7 +21,7 @@ export default function GetRealLocation (){
           setUserLocation(coords)
         }
        getLocationPermission()
-      },[])
+      },[userLocation])
 
     return(
         <View style={styles.contanierMap}>

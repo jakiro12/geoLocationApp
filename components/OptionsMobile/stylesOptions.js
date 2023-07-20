@@ -4,7 +4,7 @@ export default stylesGridOptions=StyleSheet.create({
     container:{
         width:'100%',
         height:'100%',
-        backgroundColor:'#f4f4f4',
+        backgroundColor:'#ffB400',
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
@@ -13,8 +13,8 @@ export default stylesGridOptions=StyleSheet.create({
     headerContainer:{
         width:'90%',
         height:'25%',
-        borderWidth:2,
-        borderColor:'#000000'
+        borderRadius:10,
+        overflow:'hidden'
     },
     bodyContainer:{
         width:'90%',
@@ -24,8 +24,6 @@ export default stylesGridOptions=StyleSheet.create({
     boxGrid:{
         width:'100%',
         height:'50%',
-        borderColor:'#000000',
-        borderWidth:2,
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-around',
@@ -34,8 +32,9 @@ export default stylesGridOptions=StyleSheet.create({
     boxIconOption:{
         width:'45%',
         height:'80%',
-        borderColor:'#000000',
+        borderColor:'#ffffff',
         borderWidth:2,
+        borderRadius:10,
     },
     navbarContainer:{
         width:'100%',
@@ -60,6 +59,17 @@ export default stylesGridOptions=StyleSheet.create({
     textBtnUserOption:{
         fontSize:20,
         fontWeight:'400'
+    },
+    principalLogo:{
+        width:'100%',
+        height:'100%',
+        resizeMode:'stretch',
+    },
+    logosImg:{
+        width:'100%',
+        height:'100%',
+        resizeMode:'stretch',
+        tintColor:'#000000'
     }
 
 })

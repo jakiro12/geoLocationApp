@@ -1,4 +1,4 @@
-import MapView,{MapPolyline, Marker, Polygon, Polyline} from 'react-native-maps'
+import MapView,{ Marker,Polyline} from 'react-native-maps'
 import { View } from 'react-native'
 import styles from './stylesForAll.js';
 export default function BusLine1 (){

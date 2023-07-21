@@ -10,12 +10,14 @@ export default stylesLanding = StyleSheet.create({
         justifyContent:'center'
     },
     jumpBtn:{
-        width:150,
-        height:30,
-        borderColor:'#000000',
-        borderWidth:2,
+        width:300,
+        height:150,
         display:'flex',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        overflow:'hidden'
+    },
+    textIntroName:{
+        fontSize:40
     }
 })

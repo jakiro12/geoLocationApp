@@ -75,9 +75,17 @@ export default function GetRealLocation (){
    >
    <Marker
     pinColor='#00ff00'
+
      coordinate={{
        latitude: userLocation.coords.latitude,
        longitude:userLocation.coords.longitude,
+     }}
+   />
+   <Marker
+    pinColor='#00ff00'
+     coordinate={{
+       latitude: parseFloat("-31.690700"),
+       longitude: parseFloat("-60.767386"),
      }}
    />
 

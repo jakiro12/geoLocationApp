@@ -8,7 +8,7 @@ export default function SelectTheScreen (){
         <View style={styles.container}>
             <View style={styles.navbarContainer}>
                 <View style={styles.btnTypeUser}><Text style={styles.textBtnUserOption}>Pasajero</Text></View>
-                <View style={styles.btnTypeUser}><Text style={styles.textBtnUserOption}>Conductor</Text></View>
+                <TouchableOpacity style={styles.btnTypeUser} onPress={()=>navigation.navigate('conductor')}><Text style={styles.textBtnUserOption}>Conductor</Text></TouchableOpacity>
             </View>
             <View style={styles.headerContainer}>
                 <Image source={require('../imagesToDisplay/colectivo.png')} style={styles.principalLogo} />

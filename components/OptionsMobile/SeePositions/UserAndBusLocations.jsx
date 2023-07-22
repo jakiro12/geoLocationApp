@@ -1,6 +1,6 @@
-import { View,Text,ActivityIndicator } from "react-native";
+import { View,Text,ActivityIndicator,ScrollView } from "react-native";
 import styles from './stylePositions.js';
-import * as Location from 'expo-location';
+import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar el ping
 import { useEffect,useState } from "react";
 import MapView,{Marker} from 'react-native-maps'
 
@@ -19,12 +19,42 @@ export default function GetRealLocation (){
           // Hacer algo con la ubicación
           const coords= await Location.getCurrentPositionAsync({})
           setUserLocation(coords)
+          console.log(status)
+          console.log(coords)
         }
        getLocationPermission()
       },[userLocation])
 
     return(
         <View style={styles.contanierMap}>
+          <View style={styles.choseVehiculeContianer}>
+              <ScrollView horizontal={true} style={styles.scrollLinesToChose} showsHorizontalScrollIndicator={false} decelerationRate={0.9} contentContainerStyle={{alignItems:'center',}}>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+                <View style={styles.boxLineOption}>
+                  <Text style={styles.textLineChosen}>1</Text>
+                </View>
+              </ScrollView>
+          </View> 
              {userLocation && (
    <MapView
    style={styles.mapContainer}
@@ -54,7 +84,11 @@ export default function GetRealLocation (){
  </MapView>)
   || 
   <ActivityIndicator  size="large" color="#0000ff" />}
-            
+            <View style={styles.specialOptionsContainer}>
+              <Text>
+                Descripcion del vehiculo y tiempo
+              </Text>
+            </View>
  </View>
     )
 }

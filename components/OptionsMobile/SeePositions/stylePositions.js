@@ -6,7 +6,7 @@ export default mapStyles=StyleSheet.create({
         height:'100%',
         backgroundColor:'#ffffff',
         display:'flex',
-        justifyContent:'center',
+        justifyContent:'space-between',
         alignItems:'center'
     },
     textF:{
@@ -51,5 +51,38 @@ export default mapStyles=StyleSheet.create({
     },
     textMark:{
         color:'#ffffff'
+    },
+    choseVehiculeContianer:{
+        width:'100%',
+        height:'10%',
+        borderColor:'#000000',
+        borderWidth:2,
+    },
+    specialOptionsContainer:{
+        width:'100%',
+        height:'10%',
+        borderColor:'#000000',
+        borderWidth:2,
+    },
+    scrollLinesToChose:{
+        width:'100%',
+        height:'100%',
+
+    },
+    boxLineOption:{
+        width:50,
+        height:50,
+        borderColor:'#000000',
+        borderWidth:2,
+        marginLeft:20,
+        borderRadius:50,
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    textLineChosen:{
+        fontSize:22,
+        color:'#000000',
+        fontWeight:'bold'
     }
 })

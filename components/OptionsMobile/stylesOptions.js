@@ -58,7 +58,7 @@ export default stylesGridOptions=StyleSheet.create({
     },
     textBtnUserOption:{
         fontSize:20,
-        fontWeight:'400'
+        fontWeight:'400',
     },
     principalLogo:{
         width:'100%',

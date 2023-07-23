@@ -14,22 +14,23 @@ export default function BusLine1 (){
    }}
    >
    <Marker
-    pinColor='#00ff00'  
+   identifier='salida'
+    pinColor='#ff0000'  
      coordinate={{
-       latitude: 9.172054, 
-       longitude:-83.333672,
+       latitude: 9.171355, 
+       longitude:-83.335539,
      }}
    />
 
    <Marker
-    pinColor='#00ff00'
+    pinColor='#ff0000'
      coordinate={{   
-       latitude: 9.171355,
-       longitude:-83.335539,  
+       latitude: 9.176998,
+       longitude:-83.332926,  
      }}
    />
     <Polyline
-    strokeWidth={4}
+    strokeWidth={6}
     strokeColor="green"
     coordinates={
         [{   
@@ -37,13 +38,17 @@ export default function BusLine1 (){
           longitude:-83.335539,  
         },
         {
-          latitude: 9.172266,  //9.172266, -83.335421
+          latitude: 9.172266,  
           longitude:-83.335421,
         },
         {
           latitude: 9.172054, 
-          longitude:-83.333672,
-        }  
+          longitude:-83.333672, 
+        },
+        {
+          latitude: 9.176998,  
+          longitude:-83.332926,
+        }
 
         ]
     }/>

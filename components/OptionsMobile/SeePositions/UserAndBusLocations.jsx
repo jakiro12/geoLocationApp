@@ -8,22 +8,22 @@ export default function GetRealLocation (){
     const[userLocation,setUserLocation]=useState(null)
 
     useEffect(()=>{
-        async function getLocationPermission() {
-          const { status } = await Location.requestForegroundPermissionsAsync();
+      ( async () => {
+          const { status } = await Location.requestForegroundPermissionsAsync()
           if (status !== 'granted') {
-            // Los permisos de ubicación no fueron concedidos
-            // Manejar el error o mostrar un mensaje al usuario
-            return
-          }
-          // Los permisos de ubicación fueron concedidos
-          // Hacer algo con la ubicación
-          const coords= await Location.getCurrentPositionAsync({})
-          setUserLocation(coords)
-          console.log(status)
-          console.log(coords)
-        }
-       getLocationPermission()
-      },[userLocation])
+            console.log('Permission to access location was denied')
+          } else {
+            const locationSubscription = await Location.watchPositionAsync({
+                  accuracy: Location.Accuracy.Highest,
+                  timeInterval: 1000,
+                  distanceInterval: 1,
+            }, (location) => {
+              setUserLocation(location)
+              console.log('New location update: ' + location.coords.latitude + ', ' + location.coords.longitude)
+            })
+          } return () => locationSubscription.remove()
+        })()
+  },[])
 
     return(
         <View style={styles.contanierMap}>

@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 ////
 
 export default function GiveMeYourLocation (){
+    const [xd,setxd]=useState(true)
 
     const dispatch = useDispatch()
     const data = useSelector((state) => state.VEHICULOS.allVehiculos)
 
+  
     useEffect(()=>{
         ( async () => {
             const { status } = await Location.requestForegroundPermissionsAsync()

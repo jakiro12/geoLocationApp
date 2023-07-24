@@ -7,7 +7,7 @@ import GetRealLocation from "./OptionsMobile/SeePositions/UserAndBusLocations";
 import DisplayTheRouteOfEachBus from "./OptionsMobile/AllCurrentRoutes/RouteOfForEveryBus";
 import BusLine1 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber1";
 import { useEffect,useRef } from "react";
-import GiveMeYourLocation from "./DriverLocation/getCurremtDrivenLocation";
+import GiveMeYourLocation from "./DriverLocation/getCurrentDrivenLocation";
 
 function StartApp ({navigation}){
     const translateY = useRef(new Animated.Value(-200)).current;

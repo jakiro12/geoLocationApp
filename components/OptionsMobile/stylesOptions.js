@@ -46,7 +46,7 @@ export default stylesGridOptions=StyleSheet.create({
         backgroundColor:'#03AEE7'
     },
     btnTypeUser:{
-        width:140,
+        width:'20%',
         height:'75%',
         borderColor:'#000000',
         borderWidth:1,
@@ -55,11 +55,6 @@ export default stylesGridOptions=StyleSheet.create({
         alignItems:'center',
         borderRadius:20,
         backgroundColor:'#ffB400',
-    },
-    textBtnUserOption:{
-        fontSize:20,
-        fontWeight:'400',
-      
     },
     principalLogo:{
         width:'100%',
@@ -71,6 +66,5 @@ export default stylesGridOptions=StyleSheet.create({
         height:'100%',
         resizeMode:'stretch',
         tintColor:'#000000'
-    }
-
+    },
 })

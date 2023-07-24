@@ -1,4 +1,4 @@
-import { View,Text,ActivityIndicator,ScrollView } from "react-native";
+import { View,Text,ActivityIndicator,ScrollView, TouchableOpacity } from "react-native";
 import styles from './stylePositions.js';
 import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar el ping
 import { useEffect,useState } from "react";
@@ -6,6 +6,7 @@ import MapView,{Marker} from 'react-native-maps'
 
 export default function GetRealLocation (){
     const[userLocation,setUserLocation]=useState(null)
+    const [line,setLine]=useState(null)
 
     useEffect(()=>{
       ( async () => {
@@ -14,9 +15,9 @@ export default function GetRealLocation (){
             console.log('Permission to access location was denied')
           } else {
             const locationSubscription = await Location.watchPositionAsync({
-                  accuracy: Location.Accuracy.Highest,
+                  accuracy: Location.Accuracy.BestForNavigation,
                   timeInterval: 1000,
-                  distanceInterval: 1,
+                  distanceInterval: 3,
             }, (location) => {
               setUserLocation(location)
               console.log('New location update: ' + location.coords.latitude + ', ' + location.coords.longitude)
@@ -29,30 +30,30 @@ export default function GetRealLocation (){
         <View style={styles.contanierMap}>
           <View style={styles.choseVehiculeContianer}>
               <ScrollView horizontal={true} style={styles.scrollLinesToChose} showsHorizontalScrollIndicator={false} decelerationRate={0.9} contentContainerStyle={{alignItems:'center',}}>
-                <View style={styles.boxLineOption}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1}  onPress={()=>setLine(11)}>
+                  <Text style={styles.textLineChosen}>11</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(123)}>
+                  <Text style={styles.textLineChosen}>123</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(131)}>
+                  <Text style={styles.textLineChosen}>131</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(21)}>
+                  <Text style={styles.textLineChosen}>21</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(44)}>
+                  <Text style={styles.textLineChosen}>44</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(52)}>
+                  <Text style={styles.textLineChosen}>52</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(1)}>
                   <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(1)}>
                   <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
-                  <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
-                  <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
-                  <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
-                  <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
-                  <Text style={styles.textLineChosen}>1</Text>
-                </View>
-                <View style={styles.boxLineOption}>
-                  <Text style={styles.textLineChosen}>1</Text>
-                </View>
+                </TouchableOpacity>
               </ScrollView>
           </View> 
              {userLocation && (
@@ -81,21 +82,21 @@ export default function GetRealLocation (){
        longitude:userLocation.coords.longitude,
      }}
    />
-   <Marker
-    pinColor='#00ff00'
-     coordinate={{
-       latitude: parseFloat("-31.690700"),
-       longitude: parseFloat("-60.767386"),
-     }}
-   />
-
  </MapView>)
   || 
   <ActivityIndicator  size="large" color="#0000ff" />}
             <View style={styles.specialOptionsContainer}>
-              <Text>
-                Descripcion del vehiculo y tiempo
-              </Text>
+             <View>
+              {
+                line === null ? (
+              <Text>Numero de linea</Text>
+                ):
+                <Text>Linea: {line}</Text>
+              }
+             </View>
+             <View>
+              <Text>Tiempo de espera</Text>
+             </View>
             </View>
  </View>
     )

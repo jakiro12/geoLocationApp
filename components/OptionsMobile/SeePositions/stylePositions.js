@@ -60,8 +60,10 @@ export default mapStyles=StyleSheet.create({
     specialOptionsContainer:{
         width:'100%',
         height:'10%',
-        borderColor:'#000000',
-        borderWidth:2,
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'row'
     },
     scrollLinesToChose:{
         width:'100%',
@@ -81,7 +83,7 @@ export default mapStyles=StyleSheet.create({
     },
     textLineChosen:{
         fontSize:22,
-        color:'#000000',
+        color:'#ffffff',
         fontWeight:'bold'
     }
 })

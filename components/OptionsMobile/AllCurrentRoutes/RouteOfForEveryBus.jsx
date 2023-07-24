@@ -8,7 +8,19 @@ export default function DisplayTheRouteOfEachBus(){
         <View style={styles.container}>
             <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='never' contentContainerStyle={{alignItems:'center',paddingBottom:10,}} >
                 <TouchableOpacity style={styles.boxBusOption}  onPress={()=> navigation.navigate('linea1')}>
-                    <Text>Linea X</Text>
+                    <Text style={styles.textLineDescription}>Linea X</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxBusOption}  onPress={()=> navigation.navigate('linea1')}>
+                    <Text style={styles.textLineDescription}>Linea X</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxBusOption}  onPress={()=> navigation.navigate('linea1')}>
+                    <Text style={styles.textLineDescription}>Linea X</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxBusOption}  onPress={()=> navigation.navigate('linea1')}>
+                    <Text style={styles.textLineDescription}>Linea X</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxBusOption}  onPress={()=> navigation.navigate('linea1')}>
+                    <Text style={styles.textLineDescription}>Linea X</Text>
                 </TouchableOpacity>
             </ScrollView>
         </View>

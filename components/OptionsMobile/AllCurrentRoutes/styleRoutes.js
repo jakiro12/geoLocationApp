@@ -6,6 +6,7 @@ export default stylesForListAviable = StyleSheet.create({
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
+        backgroundColor:'#ffB400'
     },
     scrollContainer:{
         width:'95%',
@@ -18,6 +19,14 @@ export default stylesForListAviable = StyleSheet.create({
         width:'85%',
         height:100,
         borderWidth:2,
-        borderColor:'#000000'
+        borderColor:'#000000',
+        marginBottom:15,
+        borderRadius:10,
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    textLineDescription:{
+        fontSize:26,
     }
 })

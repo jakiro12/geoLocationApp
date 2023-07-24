@@ -55,19 +55,20 @@ export default mapStyles=StyleSheet.create({
     choseVehiculeContianer:{
         width:'100%',
         height:'10%',
-        borderColor:'#000000',
-        borderWidth:2,
+
     },
     specialOptionsContainer:{
         width:'100%',
         height:'10%',
-        borderColor:'#000000',
-        borderWidth:2,
+        display:'flex',
+        justifyContent:'space-around',
+        alignItems:'center',
+        flexDirection:'row'
     },
     scrollLinesToChose:{
         width:'100%',
         height:'100%',
-
+        backgroundColor:'#03AEE7'
     },
     boxLineOption:{
         width:50,
@@ -75,14 +76,14 @@ export default mapStyles=StyleSheet.create({
         borderColor:'#000000',
         borderWidth:2,
         marginLeft:20,
-        borderRadius:50,
+        borderRadius:5,
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
     },
     textLineChosen:{
         fontSize:22,
-        color:'#000000',
+        color:'#ffffff',
         fontWeight:'bold'
     }
 })

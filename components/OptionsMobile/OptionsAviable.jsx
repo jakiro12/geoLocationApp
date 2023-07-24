@@ -1,8 +1,10 @@
 import {View, Text, TouchableOpacity,Image} from 'react-native';
 import styles from './stylesOptions.js';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 
 export default function SelectTheScreen (){
+    const[userTypeInApp,setUserTypeInApp]=useState('pasajero')
     const navigation=useNavigation()
     return(
         <View style={styles.container}>

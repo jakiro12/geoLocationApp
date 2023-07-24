@@ -2,6 +2,7 @@ import {View, Text, TouchableOpacity,Image} from 'react-native';
 import styles from './stylesOptions.js';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import ShowCurrentDateAndTime from './DateInfo/ClockTime.jsx';
 
 export default function SelectTheScreen (){
     const[userTypeInApp,setUserTypeInApp]=useState('pasajero')
@@ -9,8 +10,8 @@ export default function SelectTheScreen (){
     return(
         <View style={styles.container}>
             <View style={styles.navbarContainer}>
-                <View style={styles.btnTypeUser}><Text style={styles.textBtnUserOption}>Pasajero</Text></View>
-                <TouchableOpacity style={styles.btnTypeUser} onPress={()=>navigation.navigate('conductor')}><Text style={styles.textBtnUserOption}>Conductor</Text></TouchableOpacity>
+              <ShowCurrentDateAndTime />
+                <TouchableOpacity style={styles.btnTypeUser} onPress={()=>navigation.navigate('conductor')}><Text>Logo</Text></TouchableOpacity>
             </View>
             <View style={styles.headerContainer}>
                 <Image source={require('../imagesToDisplay/colectivo.png')} style={styles.principalLogo} />

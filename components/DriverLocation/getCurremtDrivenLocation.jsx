@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { View,Text } from "react-native";
 import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar el ping
-import { getAllVehiculos } from "../../Redux/Slice";
+import { vehiculoUpdate } from "../../Redux/Slice";
 import { useDispatch, useSelector } from "react-redux";
 ////
 
@@ -11,30 +11,24 @@ export default function GiveMeYourLocation (){
     const dispatch = useDispatch()
     const data = useSelector((state) => state.VEHICULOS.allVehiculos)
 
-    useEffect(()=>{
-        if(xd){
-            dispatch(vehiculoUpdate())
-            setxd(false)
-            console.log(1)
-        }
-        if(data.length !== 0){
-           // console.log(data)
-        }
-    },[])
-    const [driverLocation,setDriverLocation]=useState(null)
+    const [driverLocation,setDriverLocation]=useState()
     useEffect(()=>{
         ( async () => {
             const { status } = await Location.requestForegroundPermissionsAsync()
+            const x=0
             if (status !== 'granted') {
               console.log('Permission to access location was denied')
             } else {
               const locationSubscription = await Location.watchPositionAsync({
                     accuracy: Location.Accuracy.Highest,
-                    timeInterval: 1000,
+                    timeInterval: 10000,
                     distanceInterval: 1,
               }, (location) => {
-                setDriverLocation(location)
-                console.log('New location update: ' + location.coords.latitude + ', ' + location.coords.longitude)
+                dispatch(vehiculoUpdate({
+                  "identificador":"Cronm",
+                  "latitude":location.coords.latitude,
+                  "longitude":location.coords.longitude
+                }))
               })
             } return () => locationSubscription.remove()
           })()

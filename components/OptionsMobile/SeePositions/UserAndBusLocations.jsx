@@ -3,10 +3,14 @@ import styles from './stylePositions.js';
 import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar el ping
 import { useEffect,useState } from "react";
 import MapView,{Marker} from 'react-native-maps'
+import { getVehiculoByName } from "../../../Redux/Slice/index.js";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function GetRealLocation (){
     const[userLocation,setUserLocation]=useState(null)
     const [line,setLine]=useState(null)
+    const dispatch = useDispatch()
+    const data = useSelector((state) => state.VEHICULOS.AllVehiculosFiltered)
 
     useEffect(()=>{
       ( async () => {
@@ -16,11 +20,11 @@ export default function GetRealLocation (){
           } else {
             const locationSubscription = await Location.watchPositionAsync({
                   accuracy: Location.Accuracy.BestForNavigation,
-                  timeInterval: 1000,
-                  distanceInterval: 3,
+                  timeInterval: 10000,
+                  distanceInterval: 1,
             }, (location) => {
               setUserLocation(location)
-              console.log('New location update: ' + location.coords.latitude + ', ' + location.coords.longitude)
+              dispatch(getVehiculoByName("Cronm"))
             })
           } return () => locationSubscription.remove()
         })()
@@ -75,13 +79,21 @@ export default function GetRealLocation (){
    }}
    >
    <Marker
-    pinColor='#00ff00'
-
+    pinColor='#11'
      coordinate={{
        latitude: userLocation.coords.latitude,
        longitude:userLocation.coords.longitude,
      }}
    />
+   {data.latitude && (
+   <Marker
+    pinColor='#21'
+     coordinate={{
+      latitude:parseFloat(data.latitude),
+      longitude:parseFloat(data.longitude)
+     }}
+   />)}
+   
  </MapView>)
   || 
   <ActivityIndicator  size="large" color="#0000ff" />}

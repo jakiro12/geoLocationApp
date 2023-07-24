@@ -59,6 +59,7 @@ export const vehiculoCreate = (vehiculo)=> async(dispatch) => {
 };
 export const vehiculoUpdate = (vehiculo)=> async() => {
     try {
+        console.log(vehiculo)
         await axios.put(ROUTE+"/vehiculos/update", vehiculo)
     } catch (e) {
         console.log(e)

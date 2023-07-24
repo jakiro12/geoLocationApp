@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { View,Text } from "react-native";
 import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar el ping
+/////
 import { getAllVehiculos } from "../../Redux/Slice";
 import { useDispatch, useSelector } from "react-redux";
+////
 
 export default function GiveMeYourLocation (){
     const [driverLocation,setDriverLocation]=useState(null)
     const [xd,setxd]=useState(true)
 
-    const dispatch = useDispatch()
-    const data = useSelector((state) => state.VEHICULOS.allVehiculos)
+    const dispatch = useDispatch()////
+    const data = useSelector((state) => state.VEHICULOS.AllVehiculosFiltered)////
 
     useEffect(()=>{
         if(xd){
-            dispatch(getAllVehiculos())
+            dispatch(vehiculoUpdate())
             setxd(false)
             console.log(1)
         }

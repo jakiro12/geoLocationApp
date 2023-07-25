@@ -4,13 +4,13 @@ import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar
 import { useEffect,useState } from "react";
 import MapView,{Marker, Polyline} from 'react-native-maps'
 import { getVehiculoByName } from "../../../Redux/Slice/index.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { routeForEveryBus } from "../AllCurrentRoutes/CoordsForRoutes/coordRoutes.js";
 export default function GetRealLocation (){
     const[userLocation,setUserLocation]=useState(null)
     const [line,setLine]=useState('linea_11')
     const data = useSelector((state) => state.VEHICULOS.AllVehiculosFiltered)
-
+    const dispatch = useDispatch()
     useEffect(()=>{
       ( async () => {
           const { status } = await Location.requestForegroundPermissionsAsync()
@@ -23,6 +23,7 @@ export default function GetRealLocation (){
                   distanceInterval: 5,
             }, (location) => {
               setUserLocation(location)
+              dispatch(getVehiculoByName("Cronm"))
             })
           } return () => locationSubscription.remove()
         })()
@@ -82,6 +83,14 @@ export default function GetRealLocation (){
        longitude:userLocation.coords.longitude,
      }}
    />
+   {data.latitude && (
+   <Marker
+    pinColor='#21'
+     coordinate={{
+      latitude:parseFloat(data.latitude),
+      longitude:parseFloat(data.longitude)
+     }}
+   />)}
    
    <Polyline
    strokeWidth={6}

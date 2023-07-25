@@ -4,12 +4,11 @@ import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar
 import { useEffect,useState } from "react";
 import MapView,{Marker} from 'react-native-maps'
 import { getVehiculoByName } from "../../../Redux/Slice/index.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function GetRealLocation (){
     const[userLocation,setUserLocation]=useState(null)
     const [line,setLine]=useState(null)
-    const dispatch = useDispatch()
     const data = useSelector((state) => state.VEHICULOS.AllVehiculosFiltered)
 
     useEffect(()=>{
@@ -20,11 +19,10 @@ export default function GetRealLocation (){
           } else {
             const locationSubscription = await Location.watchPositionAsync({
                   accuracy: Location.Accuracy.BestForNavigation,
-                  timeInterval: 10000,
-                  distanceInterval: 1,
+                  timeInterval: 3000,
+                  distanceInterval: 5,
             }, (location) => {
               setUserLocation(location)
-              dispatch(getVehiculoByName("Cronm"))
             })
           } return () => locationSubscription.remove()
         })()

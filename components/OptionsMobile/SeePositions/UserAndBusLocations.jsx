@@ -2,13 +2,13 @@ import { View,Text,ActivityIndicator,ScrollView, TouchableOpacity } from "react-
 import styles from './stylePositions.js';
 import * as Location from 'expo-location'; // paquete de ubicacion, par amostrar el ping
 import { useEffect,useState } from "react";
-import MapView,{Marker} from 'react-native-maps'
+import MapView,{Marker, Polyline} from 'react-native-maps'
 import { getVehiculoByName } from "../../../Redux/Slice/index.js";
 import { useSelector } from "react-redux";
-
+import { routeForEveryBus } from "../AllCurrentRoutes/CoordsForRoutes/coordRoutes.js";
 export default function GetRealLocation (){
     const[userLocation,setUserLocation]=useState(null)
-    const [line,setLine]=useState(null)
+    const [line,setLine]=useState('linea_11')
     const data = useSelector((state) => state.VEHICULOS.AllVehiculosFiltered)
 
     useEffect(()=>{
@@ -32,10 +32,10 @@ export default function GetRealLocation (){
         <View style={styles.contanierMap}>
           <View style={styles.choseVehiculeContianer}>
               <ScrollView horizontal={true} style={styles.scrollLinesToChose} showsHorizontalScrollIndicator={false} decelerationRate={0.9} contentContainerStyle={{alignItems:'center',}}>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1}  onPress={()=>setLine(11)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1}  onPress={()=>setLine('linea_11')}>
                   <Text style={styles.textLineChosen}>11</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(123)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_123')}>
                   <Text style={styles.textLineChosen}>123</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(131)}>
@@ -77,21 +77,19 @@ export default function GetRealLocation (){
    }}
    >
    <Marker
-    pinColor='#11'
      coordinate={{
        latitude: userLocation.coords.latitude,
        longitude:userLocation.coords.longitude,
      }}
    />
-   {data.latitude && (
-   <Marker
-    pinColor='#21'
-     coordinate={{
-      latitude:parseFloat(data.latitude),
-      longitude:parseFloat(data.longitude)
-     }}
-   />)}
    
+   <Polyline
+   strokeWidth={6}
+   strokeColor="green" 
+    coordinates={
+     routeForEveryBus[line]
+    }
+   />
  </MapView>)
   || 
   <ActivityIndicator  size="large" color="#0000ff" />}

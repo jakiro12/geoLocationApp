@@ -5,7 +5,6 @@ import { useState } from 'react';
 import ShowCurrentDateAndTime from './DateInfo/ClockTime.jsx';
 
 export default function SelectTheScreen (){
-    const[userTypeInApp,setUserTypeInApp]=useState('pasajero')
     const navigation=useNavigation()
     return(
         <View style={styles.container}>

@@ -42,7 +42,7 @@ export const getAllVehiculos = ()=> async(dispatch) => {
 //------------------Admin-------------------
 export const getVehiculoByName = (name)=> async(dispatch) => {
     try {
-        var json = await axios.get(ROUTE+"/vehiculos/"+name.toLowerCase())
+        var json = await axios.get(ROUTE+"/vehiculos/"+name)
         //  let productWithStock = json.data.filter((prod)=> prod.stock > 0)
         dispatch(userSlice.actions.getVehiculoByName (json.data))
 

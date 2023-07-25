@@ -18,7 +18,7 @@ export default function BusLine1 (){
     strokeWidth={6}
     strokeColor="green"
     coordinates={
-        routeForEveryBus.linea_1
+        routeForEveryBus['linea_11'].coordinates
     }/>
  </MapView>
         </View>

@@ -39,23 +39,23 @@ export default function GetRealLocation (){
                 <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_123')}>
                   <Text style={styles.textLineChosen}>123</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(131)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_131')}>
                   <Text style={styles.textLineChosen}>131</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(21)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_21')}>
                   <Text style={styles.textLineChosen}>21</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(44)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_44')}>
                   <Text style={styles.textLineChosen}>44</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(52)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_52')}>
                   <Text style={styles.textLineChosen}>52</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(1)}>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_1')}>
                   <Text style={styles.textLineChosen}>1</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine(1)}>
-                  <Text style={styles.textLineChosen}>1</Text>
+                <TouchableOpacity style={styles.boxLineOption} activeOpacity={1} onPress={()=>setLine('linea_23')}>
+                  <Text style={styles.textLineChosen}>23</Text>
                 </TouchableOpacity>
               </ScrollView>
           </View> 
@@ -96,7 +96,7 @@ export default function GetRealLocation (){
    strokeWidth={6}
    strokeColor="green" 
     coordinates={
-     routeForEveryBus[line]
+     routeForEveryBus[line].coordinates
     }
    />
  </MapView>)
@@ -104,12 +104,7 @@ export default function GetRealLocation (){
   <ActivityIndicator  size="large" color="#0000ff" />}
             <View style={styles.specialOptionsContainer}>
              <View>
-              {
-                line === null ? (
-              <Text>Numero de linea</Text>
-                ):
-                <Text>Linea: {line}</Text>
-              }
+                <Text>Linea: {routeForEveryBus[line].number}</Text>
              </View>
              <View>
               <Text>Tiempo de espera</Text>

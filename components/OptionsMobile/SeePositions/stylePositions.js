@@ -75,11 +75,12 @@ export default mapStyles=StyleSheet.create({
         height:50,
         borderColor:'#000000',
         borderWidth:2,
-        marginLeft:20,
+        marginLeft:10,
         borderRadius:5,
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
+        marginRight:10,
     },
     textLineChosen:{
         fontSize:22,

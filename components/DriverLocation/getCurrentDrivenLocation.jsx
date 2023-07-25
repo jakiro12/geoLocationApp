@@ -36,7 +36,6 @@ export default function GiveMeYourLocation (){
         <View>
             <Text>
                 Activame la ubi perro
-            
             </Text>
         </View>
     )

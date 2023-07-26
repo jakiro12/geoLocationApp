@@ -1,7 +1,6 @@
 import {View, Text, TouchableOpacity,Image} from 'react-native';
 import styles from './stylesOptions.js';
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
 import ShowCurrentDateAndTime from './DateInfo/ClockTime.jsx';
 
 export default function SelectTheScreen (){

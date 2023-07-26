@@ -1,4 +1,4 @@
-import MapView,{ Marker,Polyline} from 'react-native-maps'
+import MapView,{ Polyline} from 'react-native-maps'
 import { View } from 'react-native'
 import styles from './stylesForAll.js';
 import { routeForEveryBus } from '../CoordsForRoutes/coordRoutes.js';

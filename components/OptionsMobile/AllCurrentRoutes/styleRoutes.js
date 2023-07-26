@@ -11,8 +11,6 @@ export default stylesForListAviable = StyleSheet.create({
     scrollContainer:{
         width:'95%',
         height:'90%',
-        borderColor:'#000000',
-        borderWidth:2,
         marginTop:10
     },
     boxBusOption:{

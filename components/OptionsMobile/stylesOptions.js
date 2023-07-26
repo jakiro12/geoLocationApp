@@ -47,14 +47,11 @@ export default stylesGridOptions=StyleSheet.create({
     },
     btnTypeUser:{
         width:'20%',
-        height:'75%',
-        borderColor:'#000000',
-        borderWidth:1,
+        height:'90%',
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
         borderRadius:20,
-        backgroundColor:'#ffB400',
     },
     principalLogo:{
         width:'100%',

@@ -10,7 +10,9 @@ export default function SelectTheScreen (){
         <View style={styles.container}>
             <View style={styles.navbarContainer}>
               <ShowCurrentDateAndTime />
-                <TouchableOpacity style={styles.btnTypeUser} onPress={()=>navigation.navigate('conductor')}><Text>Logo</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.btnTypeUser} onPress={()=>navigation.navigate('conductor')}>
+                    <Image source={require('../imagesToDisplay/chofer.png')} style={styles.principalLogo}/>
+                </TouchableOpacity>
             </View>
             <View style={styles.headerContainer}>
                 <Image source={require('../imagesToDisplay/colectivo.png')} style={styles.principalLogo} />

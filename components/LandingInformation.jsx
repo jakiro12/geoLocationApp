@@ -1,13 +1,19 @@
-import { View,Text,StatusBar,TouchableOpacity, Animated} from "react-native";
+import { View,Text,StatusBar, Animated} from "react-native";
 import styles from './stylesForLandingPage';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SelectTheScreen from "./OptionsMobile/OptionsAviable";
 import GetRealLocation from "./OptionsMobile/SeePositions/UserAndBusLocations";
 import DisplayTheRouteOfEachBus from "./OptionsMobile/AllCurrentRoutes/RouteOfForEveryBus";
-import BusLine1 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber1";
+import BusLine11 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber11";
 import { useEffect,useRef } from "react";
 import GiveMeYourLocation from "./DriverLocation/getCurrentDrivenLocation";
+import BusLine44 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber44";
+import BusLine123 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber123";
+import BusLine21 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber21";
+import BusLine52 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber52";
+import BusLine1 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber1";
+import BusLine23 from "./OptionsMobile/AllCurrentRoutes/BusLines/LineNumber23";
 
 function StartApp ({navigation}){
     const translateY = useRef(new Animated.Value(-200)).current;
@@ -64,9 +70,14 @@ export default function SheeTInformationAbout (){
                     <Stack.Screen name='opciones' component={SelectTheScreen} />
                     <Stack.Screen name="ubicacion" component={GetRealLocation} />
                     <Stack.Screen name='recorridos' component={DisplayTheRouteOfEachBus}/>
-                    <Stack.Screen name='linea1' component={BusLine1}/>
+                    <Stack.Screen name='linea_1' component={BusLine1}/>
+                    <Stack.Screen name='linea_11' component={BusLine11}/>
+                    <Stack.Screen name='linea_21' component={BusLine21}/>
+                    <Stack.Screen name='linea_23' component={BusLine23}/>
+                    <Stack.Screen name='linea_44' component={BusLine44}/>
+                    <Stack.Screen name='linea_52' component={BusLine52}/>
+                    <Stack.Screen name='linea_123' component={BusLine123}/>
                     <Stack.Screen name='conductor' component={GiveMeYourLocation}/>
-
                 </Stack.Navigator>
         </NavigationContainer>
     )

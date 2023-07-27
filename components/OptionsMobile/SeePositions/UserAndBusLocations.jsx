@@ -11,6 +11,7 @@ export default function GetRealLocation (){
     const [line,setLine]=useState('linea_11')
     const data = useSelector((state) => state.VEHICULOS.AllVehiculosFiltered)
     const dispatch = useDispatch()
+    
     useEffect(()=>{
       ( async () => {
           const { status } = await Location.requestForegroundPermissionsAsync()

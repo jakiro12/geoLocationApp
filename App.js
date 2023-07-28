@@ -1,4 +1,5 @@
 import React from 'react';
+import 'react-native-gesture-handler'
 import SheeTInformationAbout from './components/LandingInformation';
 import { Provider } from 'react-redux';
 import store from './Redux/Store/index.js'

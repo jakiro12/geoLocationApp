@@ -25,6 +25,6 @@ export default stylesForListAviable = StyleSheet.create({
         alignItems:'center'
     },
     textLineDescription:{
-        fontSize:26,
+        fontSize:24,
     }
 })
